@@ -3,7 +3,8 @@ pipeline {
   environment {
     PRE_PROD_INVENTORY = "prod"
     STAGING_INVENTORY = "dev"
-    PRE_PROD_BRANCH = /^release\/.*/
+ //   PRE_PROD_BRANCH = /^release\/.*/
+    PRE_PROD_BRANCH = "release"
     STAGING_BRANCH = "integration"
     INVENTORY_NAME = """${
       BRANCH_NAME ==~ PRE_PROD_BRANCH ? PRE_PROD_INVENTORY : BRANCH_NAME == STAGING_BRANCH ? STAGING_INVENTORY : 'Unknown'
